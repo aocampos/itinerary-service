@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: itry-calculate-travel-service
+  cloud:
+    config:
+      enable: false
+
+eureka:
+  client:
+    enable: false
+
+rest:
+  url:
+    route-service: itry-route-service
