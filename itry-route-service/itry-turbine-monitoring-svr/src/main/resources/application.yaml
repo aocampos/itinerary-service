@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: itry-turbine-monitoring-svr
+
+server:
+  port: 8070
+turbine:
+  appConfig: itry-calculate-travel-service

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: itry-route-service
+  cloud:
+    config:
+      enable: false
+
+eureka:
+  client:
+    enable: false
+
+spring.data.neo4j.username: neo4j
+spring.data.neo4j.password: secret
