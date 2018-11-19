@@ -1,0 +1,64 @@
+version: '3'
+services:
+  
+  config:
+    hostname: config
+    image: aocampos/itry-config-server
+    ports: 
+      - "8888:8888"
+    networks:
+      - itinerary
+  discovery:
+    hostname: discovery
+    restart: always
+    image: aocampos/itry-discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - itinerary
+  itry-route-service-1:
+    hostname: itry-route-service-1
+    restart: always
+    image: aocampos/itry-route-service
+    ports:
+      - "8071:8080"
+    networks:
+      - itinerary
+  itry-route-service-2:
+    hostname: itry-route-service-2
+    restart: always
+    image: aocampos/itry-route-service
+    ports:
+      - "8081:8080"
+    networks:
+      - itinerary
+  itry-calculate-travel-service-1:
+    hostname: itry-calculate-travel-service-1
+    restart: always
+    image: aocampos/itry-calculate-travel-service
+    ports:
+      - "8072:8080"
+    networks:
+      - itinerary
+  itry-calculate-travel-service-2:
+    hostname: itry-calculate-travel-service-2
+    restart: always
+    image: aocampos/itry-calculate-travel-service
+    ports:
+      - "8082:8080"
+    networks:
+      - itinerary  
+  neo4j:
+    hostname: neo4j
+    image: neo4j:latest
+    ports: 
+      - "7474:7474"
+      - "7687:7687" 
+    environment:
+      - NEO4J_AUTH=none    
+    networks:
+      - itinerary
+
+networks:
+  itinerary:
+    driver: bridge
