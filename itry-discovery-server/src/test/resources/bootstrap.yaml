@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: discovery
+  cloud:
+    config:
+      enable: false
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
