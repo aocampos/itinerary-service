@@ -47,7 +47,15 @@ services:
     ports:
       - "8082:8080"
     networks:
-      - itinerary  
+      - itinerary
+  itry-service-gateway:
+    hostname: itry-service-gateway
+    restart: always
+    image: aocampos/itry-service-gateway
+    ports:
+      - "5556:5555"
+    networks:
+      - itinerary
   neo4j:
     hostname: neo4j
     image: neo4j:latest

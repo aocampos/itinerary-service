@@ -73,6 +73,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.26.0</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>${project.name}</alias>
+                            <name>aocampos/${project.name}</name>
+                            <build>
+                                <from>openjdk:8-alpine</from>
+                                <assembly>
+                                    <descriptorRef>artifact</descriptorRef>
+                                </assembly>
+                                <entryPoint>java -Dspring.profiles.active=docker -jar /maven/${project.build.finalName}.jar
+                                </entryPoint>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
