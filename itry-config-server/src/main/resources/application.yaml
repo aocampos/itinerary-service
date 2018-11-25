@@ -10,4 +10,4 @@ spring:
     config:
       server:
         native:
-          searchLocations: classpath:config/itry-discovery-server, classpath:config/itry-calculate-travel-service, classpath:config/itry-route-service
+          searchLocations: classpath:config/itry-discovery-server, classpath:config/itry-calculate-travel-service, classpath:config/itry-route-service, classpath:config/itry-service-gateway
