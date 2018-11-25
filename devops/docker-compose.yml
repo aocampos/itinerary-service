@@ -53,7 +53,7 @@ services:
     restart: always
     image: aocampos/itry-service-gateway
     ports:
-      - "5556:5555"
+      - "5555:5555"
     networks:
       - itinerary
   neo4j:

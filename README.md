@@ -40,16 +40,15 @@ Start the application and wait until all the projects are up.
 
 ```
 docker-compose -f devops/docker-compose.yml up -d
-docker-compose ps
 ```
 
-Access the project's swagger to call the APIs.
+Call the APIs through the swagger-ui using the service gateway.
 
 ```
-http://localhost:8081/swagger-ui.html
+http://localhost:5555/api/route/swagger-ui.html
 ```
 ```
-http://localhost:8082/swagger-ui.html
+http://localhost:5555/api/calculate-travel/swagger-ui.html
 ```
 
 Stop the application.
